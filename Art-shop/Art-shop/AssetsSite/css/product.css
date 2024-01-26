@@ -1,0 +1,171 @@
+/*
+Template Name: Art Web
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************product****************/
+.product_1r .form-select{
+height:50px;
+ }
+.product_2imi1 ul li a{
+width:50px;
+height:50px;
+font-size:22px;
+line-height:48px;
+border:2px solid #a81c51;
+ }
+.product_2imi1 ul li a:hover{
+background:#fff;
+color:#a81c51!important;
+ }
+.product_2imi1 {
+padding-top:110px;
+display:none;
+ }
+.product_2im1i1{
+bottom:-29px;
+display:none; 
+ }
+.prod_main:hover .product_2im1i1{
+display:block; 
+ }
+.prod_main:hover .product_2imi1{
+display:block; 
+ }
+.product_2{
+margin-top:30px; 
+ }
+ 
+.detail_1r .form-control{
+background:#252525!important;
+color:#ddd; 
+ }
+.detail_1r ul li a{
+background:#252525;
+ }
+.detail_1l .carousel-indicators {
+bottom: -50px;
+}
+.detail_1l .carousel-indicators [data-bs-target] {
+background-color: #a81c51;
+}
+
+.detail_2{
+margin-top:60px; 
+ }
+
+.detail_2 .nav-tabs  {
+border-color:#323131;
+}
+.detail_2 .nav-tabs  .nav-link.active {
+border:none;
+border-bottom:1px solid #a81c51;
+color:#a81c51;
+background:none;
+}
+.detail_2 .nav-tabs .nav-link {
+border-radius:0;
+border:none;
+padding:0;
+padding-bottom:15px;
+color:#ddd;
+border-bottom:1px solid transparent;
+font-size:18px;
+}
+.detail_2 .nav-tabs .nav-link:hover {
+border-bottom:1px solid #a81c51;
+color:#a81c51;
+}
+.home_i ul li i{
+font-size:8px; 
+ }
+.profilei1l{
+border:1px solid #323131;
+padding:1px; 
+ }
+.profilei1r{
+border:1px solid #323131;
+ }
+.profilei2 .form-control{
+background:#252525!important;
+color:#ddd;
+height:50px; 
+ }
+.profilei2 .form_text{
+height:120px; 
+ }
+
+/*********************product_end****************/
+
+
+@media screen and (max-width : 767px){
+.product_1r{
+margin-top:15px; 
+ }
+.prod_main {
+margin-bottom:25px; 
+ }
+
+.detail_1r{
+margin-top:50px; 
+ }
+.detail_1r .form-control{
+width:65px!important; 
+ }
+.home_i h4{
+text-align:center; 
+ }
+.home_i h5{
+text-align:center; 
+ }
+.profilei  h5{
+text-align:center;  
+ }
+.profilei  .col_yell{
+text-align:center;
+display:block;  
+ }
+.profilei2 .form-control{
+margin-bottom:15px; 
+ }
+.profilei2 h6{
+text-align:center; 
+ }
+.profilei2 h5{
+text-align:center; 
+ }
+.detail_4 {
+text-align:center;  
+ }
+ }
+
+
+@media (min-width:576px) and (max-width:767px) {
+
+ }
+@media (min-width:768px) and (max-width:991px) {
+.product_2imi img{
+min-height:265px; 
+ }
+.detail_1l img{
+min-height:455px;  
+ }
+
+ }
+
+@media (min-width:992px) and (max-width:1200px) {
+.product_2imi img{
+min-height:265px; 
+ }
+.detail_1l img{
+min-height:455px;  
+ }
+
+ }
+@media (min-width:1201px) and (max-width:1255px) {
+
+ }
+
+

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Art_shop.Models.user_reviews>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.review.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_info.first_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.review.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_info.first_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.user_review_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.user_review_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.user_review_id })
+        </td>
+    </tr>
+}
+
+</table>

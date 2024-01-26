@@ -1,0 +1,44 @@
+﻿@model List<Art_shop.Models.Show>
+
+@{
+    ViewBag.Title = "Shows";
+    Layout = "~/Views/Shared/_LayoutPage_main.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+     <div class="section-title">
+        <h2>Exhibition</h2>
+        <h3>Explore Our <span>Art Exhibition</span></h3>
+        <p>Discover unique art exhibitions.</p>
+    </div>
+
+    <div class="row">
+        @foreach (var show in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="@Url.Content("~/Images/" + show.Show_Image)" class="card-img-top" alt="Show Image">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-4" style="color: black;">
+                    <div class="card-body">
+
+                        <h5 class="card-title">@show.Title</h5>
+                        <p class="card-text text-dark">Details: @show.Description</p>
+                        <p class="card-text text-dark">Show Venue: @show.Venue</p>
+                        <p class="card-text text-dark">Organized by: @show.Organizer</p>
+                        <h5 class="card-title text-dark">Start Date: @show.StartDate</h5>
+                        <h5 class="card-title text-dark">End Date: @show.EndDate</h5>
+
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

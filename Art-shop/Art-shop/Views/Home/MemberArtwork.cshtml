@@ -1,0 +1,147 @@
+﻿@model List<Art_shop.Models.MemberArtwork>
+
+@{
+    ViewBag.Title = "MemberArtwork";
+    Layout = "~/Views/Shared/_LayoutPage_main.cshtml";
+}
+
+<style>
+    /*********************connect****************/
+    #connect {
+        background: #f8f8f8;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    .connect h2 {
+        font-size: 30px;
+        color: #111;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+
+
+    #connect .clear {
+        clear: both;
+        float: none;
+        width: 100%;
+    }
+
+    #connect .gallery a img {
+        float: left;
+        width: 20%;
+        height: auto;
+        border: 2px solid #fff;
+        -webkit-transition: -webkit-transform .15s ease;
+        -moz-transition: -moz-transform .15s ease;
+        -o-transition: -o-transform .15s ease;
+        -ms-transition: -ms-transform .15s ease;
+        transition: transform .15s ease;
+        position: relative;
+    }
+
+    #connect .container .gallery a:hover img {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+        z-index: 5;
+    }
+
+    #connect .container .gallery a.big img {
+        width: 40%;
+    }
+
+    #connect .align-center {
+        text-align: center;
+    }
+
+    /*********************connect_end****************/
+
+    /*********************about_home****************/
+</style>
+<br />
+<br />
+<br />
+<br />
+<section id="center" class="center_o bg_gray pt-2 pb-2">
+    <div class="container-xl">
+        <div class="row center_o1">
+            <div class="col-md-5">
+                <div class="center_o1l">
+                    <h2 class="mb-0">Artists Detail</h2>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="center_o1r text-end">
+                    <h6 class="mb-0"><a href="@Url.Action("Index", "Home")">Home</a> <span class="me-2 ms-2"><i class="fa fa-caret-right"></i></span>  Artists</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row port_1 text-center">
+    <div class="col-md-12">
+        <h1 class="font_60">Our Artists</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+        <span class="icon_line col_pink"><i class="fa fa-square-o"></i></span>
+    </div>
+</div>
+
+
+<div class="row">
+    <section id="detail" class="p_4">
+        <div class="container-xl">
+            <div class="row detail_1">
+                @foreach (var memberartwork in Model)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            @if (!string.IsNullOrEmpty(memberartwork.ArtworkImage))
+                            {
+                                <img src="data:image/jpeg;base64,@Convert.ToBase64String(System.IO.File.ReadAllBytes(Server.MapPath("~/Images/" + memberartwork.ArtworkImage)))" class="card-img-top" alt="Artist Image">
+                            }
+                            <div class="card-body text-dark">
+                                <!-- Add text-dark class for dark text color -->
+                                <h5 class="card-title">@memberartwork.ArtworkTitle</h5>
+                                <p class="card-text">Category: @memberartwork.Category</p>
+                                <p class="card-text">Artist: @(memberartwork.Member != null ? memberartwork.Member.Name : "N/A")</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+<section id="connect" class="gallery_page">
+    <div class="container">
+        <div class="row">
+            <div class="connect clearfix">
+                <h2>GALLERY</h2>
+            </div>
+            <div class="connect_1 clearfix">
+                <div class="gallery">
+                    <a href=" #" class="big"><img src="~/Art_Images/Street Art/600x300.png" alt="" title="Beautiful Image"></a>
+                    <a href="#"><img src="~/Art_Images/Street Art/300.jpg" alt="" title=""></a>
+                    <a href="#"><img src="~/Art_Images/Street Art/3002.jpeg" alt="" title="Beautiful Image"></a>
+                    <a href="# "><img src="~/Art_Images/Street Art/3003.jpeg" alt="" title=""></a>
+                    <div class="clear"></div>
+                    <a href="img/26.jpg" class="big"><img src="~/Art_Images/Street Art/6002.jpeg" alt="" title=""></a>
+                    <a href="img/27.jpg"><img src="~/Art_Images/Street Art/3007.jpeg" alt="" title=""></a>
+                    <a href="img/28.jpg"><img src="~/Art_Images/Street Art/3008.jpeg" alt="" title=""></a>
+                    <a href="img/29.jpg"><img src="~/Art_Images/Street Art/3009.jpeg" alt="" title=""></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

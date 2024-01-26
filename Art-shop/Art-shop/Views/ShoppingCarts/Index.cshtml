@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Art_shop.Models.ShoppingCart>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artwork.ArtworkTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_info.first_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artwork.ArtworkTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_info.first_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CartID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CartID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CartID })
+        </td>
+    </tr>
+}
+
+</table>

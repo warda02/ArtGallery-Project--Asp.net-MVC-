@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Art_shop.Models.Bid>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BidderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BidAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auction.AuctionID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BidderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BidAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auction.AuctionID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BidID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BidID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BidID })
+        </td>
+    </tr>
+}
+
+</table>

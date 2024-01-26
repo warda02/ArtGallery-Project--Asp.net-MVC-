@@ -1,0 +1,51 @@
+﻿@model Art_shop.Models.MemberArtwork
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MemberArtwork</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtworkTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtworkTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtworkImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtworkImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtworkID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,8 @@
+﻿@model List<Art_shop.Models.Category>
+
+<ul>
+    @foreach (var category in Model)
+    {
+        <li><a href="@Url.Action("ArtworkByCategory", "Home", new { categoryId = category.CategoryID })">@category.CategoryName</a></li>
+    }
+</ul>

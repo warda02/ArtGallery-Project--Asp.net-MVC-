@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e0368ad761aa46f39bc40dca9640e3e5" Name="Diagram1">
+        <EntityTypeShape EntityType="GalleryModel.admin_info" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Artist" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Artwork" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Auction" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Bid" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Booking" Width="1.5" PointX="10" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.email_info" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Member" Width="1.5" PointX="7.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.MemberArtwork" Width="1.5" PointX="10" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.ShoppingCart" Width="1.5" PointX="10.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.Show" Width="1.5" PointX="7.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.sysdiagram" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryModel.user_info" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <AssociationConnector Association="GalleryModel.FK__Artist__Category__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Artist__Category__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Artwork__ArtistI__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Auctions__Artist__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Artwork__ArtistI__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Auctions__Artwor__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__ShoppingC__Artwo__69C6B1F5" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Auctions__Catego__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__Bids__AuctionID__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK_Auctions_User" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK_Bids_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK_Bookings_Shows" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK_Artwork_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryModel.FK__ShoppingC__UserI__68D28DBC" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GalleryModel.tblInvoice" Width="1.5" PointX="5.25" PointY="16.125" />
+        <AssociationConnector Association="GalleryModel.FK__tblInvoic__UserI__7AF13DF7" />
+        <EntityTypeShape EntityType="GalleryModel.orders_info" Width="1.5" PointX="7.5" PointY="16.375" />
+        <AssociationConnector Association="GalleryModel.FK__orders_in__user___0E04126B" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

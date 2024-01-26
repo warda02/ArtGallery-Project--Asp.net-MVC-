@@ -1,0 +1,28 @@
+﻿ <!-- Create.cshtml in Views/EmailInfo -->
+@model Art_shop.Models.email_info
+
+@{
+    ViewBag.Title = "Subscribe";
+    Layout = "~/Views/Shared/_LayoutPage_main.cshtml";
+}
+
+<h2>Subscribe to Newsletter</h2>
+
+@using (Html.BeginForm("Create", "email_info", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Subscribe" class="btn btn-default" />
+        </div>
+    </div>
+}

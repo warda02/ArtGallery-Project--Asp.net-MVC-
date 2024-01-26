@@ -1,0 +1,110 @@
+/*
+Template Name: Art Web
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************about************/
+.about_pg1il span {
+width:120px;
+height:120px;
+line-height:120px;
+  }
+.about_pg1il span:hover {
+background: #252525;
+  }
+.about_pg2i{
+background:#111; 
+border:1px solid #111;
+ }
+.about_pg2i:hover{
+border:1px solid #323131;
+background:none; 
+ }
+.about_pg2i ul li a{
+background: #252525;
+border-radius:0; 
+ }
+
+/*********************about_end****************/
+
+
+@media screen and (max-width : 767px){
+.about_pg1i {
+text-align:center; 
+ }
+.about_pg1ir{
+margin-top:15px; 
+ }
+.about_pg1ir p{
+text-align:left;
+ }
+.about_pg2i{
+padding:10px!important;
+ }
+.about_pg2i {
+margin-top:15px;
+ }
+.about_pg2i h5{
+text-align:center; 
+ }
+.about_pg2i h6{
+text-align:center; 
+ }
+.about_pg2i .font_14{
+text-align:left; 
+ }
+.about_pg2i ul{
+text-align:center;
+ }
+
+ }
+
+
+@media (min-width:576px) and (max-width:767px) {
+
+ }
+@media (min-width:768px) and (max-width:991px) {
+.about_pg1il span {
+width: 80px;
+height: 80px;
+line-height: 80px;
+margin-left:10px;
+margin-right:10px;
+}
+.about_pg2i h6{
+font-size:10px; 
+ }
+.about_pg2i p{
+font-size:12px; 
+ }
+.about_pg2i{
+padding:10px 5px!important; 
+ }
+.about_pg2i ul li a {
+width:30px;
+height:30px;
+}
+.about_pg2i ul li a i{
+line-height:30px;
+font-size:14px;
+}
+
+ }
+
+@media (min-width:992px) and (max-width:1200px) {
+.about_pg1il span {
+width: 100px;
+height: 100px;
+line-height: 100px;
+margin-left:10px;
+margin-right:10px;
+}
+
+ }
+@media (min-width:1201px) and (max-width:1255px) {
+
+ }
+
+

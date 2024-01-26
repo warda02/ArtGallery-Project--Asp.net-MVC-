@@ -1,0 +1,75 @@
+﻿@model Art_shop.Models.Auction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Auction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingBid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingBid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentBid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentBid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artwork.ArtworkTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artwork.ArtworkTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artist.ArtistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artist.ArtistName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuctionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

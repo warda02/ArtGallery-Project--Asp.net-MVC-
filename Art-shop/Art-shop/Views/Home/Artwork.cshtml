@@ -1,0 +1,107 @@
+﻿@model List<Art_shop.Models.Artwork>
+
+@{
+    ViewBag.Title = "Artworks";
+    Layout = "~/Views/Shared/_LayoutPage_main.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+<section id="center" class="center_o bg_gray pt-2 pb-2">
+    <div class="container-xl">
+        <div class="row center_o1">
+            <div class="col-md-5">
+                <div class="center_o1l">
+                    <h2 class="mb-0">SHOP ART</h2>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="center_o1r text-end">
+                    <h6 class="mb-0"><a href="#">Home</a> <span class="me-2 ms-2"><i class="fa fa-caret-right"></i></span> Product</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="product" class="p_4">
+    <div class="container-xl">
+        <div class="row product_1">
+            <div class="col-md-9">
+                <div class="product_1l">
+                    <p class="mb-0 mt-2">Showing 1–12 of 23 results</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row product_2">
+            @foreach (var artwork in Model)
+            {
+                <div class="col-md-3">
+                    <div class="prod_main p-1 bg-white clearfix">
+                        <div class="product_2im clearfix position-relative">
+                            <div class="product_2imi clearfix">
+                                <div class="grid clearfix">
+                                    <figure class="effect-jazz mb-0">
+                                        @if (!string.IsNullOrEmpty(artwork.ArtworkImage))
+                                        {
+                                            var imagePath = Server.MapPath("~/Images/" + artwork.ArtworkImage);
+                                            var imageBytes = System.IO.File.ReadAllBytes(imagePath);
+                                            var base64String = Convert.ToBase64String(imageBytes);
+
+                                            <img src="data:image/jpeg;base64,@base64String" class="card-img-top"
+                                                 alt="Artwork Image" style="max-width: 100%; height: 200px;">
+                                        }
+
+                                    </figure>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="product_2im1 position-relative clearfix">
+                            <div class="clearfix product_2im1i text-center pt-3 pb-4">
+                                <h5 class="font_14 text-uppercase"><a class="col_dark" href="detail.html">@artwork.ArtworkTitle</a></h5>
+                                <span class="font_12 col_yell">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </span>
+                            </div>
+                            <div class="clearfix product_2im1i1 text-center position-absolute w-100">
+                                <h6 class="d-inline-block bg_pink p-2 ps-3 pe-3">
+                                    <span class="text-decoration-line-through me-2 col_gray"></span>@artwork.Price
+                                </h6>
+
+
+                                <ul class="mb-4">
+                                    <li class="d-inline-block bg_pink p-2 ps-3 pe-3">
+                                        <a class="bg_pink text-white d-block"
+                                           href="@Url.Action("AddtoCart", "Home", new { id = artwork.ArtworkID, quantity
+                                                = artwork.Quantity, imageUrl = artwork.ArtworkImage })">
+                                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            } <!-- Closing brace for foreach loop should be here -->
+        </div>
+    </div>
+
+</section>
+
+<br />
+<br />
+<br />
+<br />

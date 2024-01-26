@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.Title = "adminpanel";
+    Layout = "~/Views/Shared/_LayoutPage_admin.cshtml";
+}
+
+ 
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+ 
+    <!-- Sidebar -->
+   
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+            with font-awesome or any other icon font library -->
+                <li class="nav-item has-treeview menu-open">
+                    <a href="@Url.Action("Create", "Artists")" class="nav-link active">
+
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            MAIN
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-paint-brush"></i>
+                                <p>
+                                    Artists
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Create", "Artists")" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Create</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Edit", "Artists")" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Edit</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Delete", "Artists")" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Delete</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Index", "Artists")" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="@Url.Action("Create", "Categories")" class="nav-link active">
+
+                                <!-- Category Icon -->
+                                <i class="fas fa-tags"></i>
+                                <p>Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Artwork Icon -->
+                            <a href="@Url.Action("Create", "Artwork")" class="nav-link active">
+                                <i class="fas fa-image"></i>
+
+                                <p>Art Work</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "Auctions")" class="nav-link active">
+                        <i class="far fa-envelope nav-icon"></i>
+                        <p>Auctions</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "Shows")" class="nav-link active">
+                        <i class="far fa-envelope nav-icon"></i>
+                        <p>New Shows</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "email_info")" class="nav-link active">
+                        <i class="far fa-envelope nav-icon"></i>
+                        <p>Register Emails</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "ViewingRooms")" class="nav-link active">
+                        <i class="far fa-envelope nav-icon"></i>
+                        <p>ViewingRoom</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "orders_info")" class="nav-link active">
+                        <!-- Information Icon -->
+                        <i class="fas fa-info-circle"></i>
+                        <p>Orders Information</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "orders")" class="nav-link active">
+                        <!-- Orders Icon -->
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Orders</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "Reviews")" class="nav-link active">
+                        <i class="fas fa-star"></i>
+                        <p>Reviews</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Create", "user_info")" class="nav-link active">
+                        <i class="fas fa-user"></i>
+                        <p>Users</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="@Url.Action("logout", "admin_info")" class="nav-link active">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+</aside>
+
+</div>
+
+</body>
+
+
+
+
+ 

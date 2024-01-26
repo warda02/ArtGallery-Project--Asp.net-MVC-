@@ -1,0 +1,59 @@
+﻿@model List<Art_shop.Models.Auction>
+
+@{
+    ViewBag.Title = "Auctions";
+    Layout = "~/Views/Shared/_LayoutPage_main.cshtml";
+}
+
+<div class="container">
+    <div class="section-title">
+        <h2>Auctions</h2>
+        <h3>Explore Our <span>Art Auctions</span></h3>
+        <p>Experience the thrill of bidding on unique artworks.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Your existing content for the left side (image) -->
+            @foreach (var auction in Model)
+            {
+                <div class="card mb-4">
+                    <img src="@Url.Content("~/Images/" + auction.Artwork.ArtworkImage)" class="card-img-top" alt="Artwork Image">
+                </div>
+            }
+        </div>
+        <div class="col-md-8">
+            <!-- Your existing content for the right side (details, bid options) -->
+            @foreach (var auction in Model)
+            {
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">@auction.Artwork.ArtworkTitle</h5>
+                        <p class="card-text">Artist: @(auction.Artist != null ? auction.Artist.ArtistName : "N/A")</p>
+                        <p class="card-text">Starting Bid: @auction.StartingBid</p>
+                        <p class="card-text">Start Date: @auction.StartDate</p>
+                        <p class="card-text">End Date: @auction.EndDate</p>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Display bid options only if the user is logged in -->
+                            <select name="bidAmount" id="bidAmount" class="form-control">
+                                <option value="100">$100</option>
+                                <option value="200">$200</option>
+                                <!-- Add more bid options as needed -->
+                            </select>
+                        }
+                        else
+                        {
+                            <p class="card-text">
+                                Log in to place a bid.<br /><br />
+                                <a href="@Url.Action("Login", "user_info")" class="btn btn-danger">Login</a>
+                            </p>
+
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

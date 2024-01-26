@@ -1,0 +1,87 @@
+﻿@model Art_shop.Models.Artwork
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage_main.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    <section id="center" class="center_o bg_gray pt-2 pb-2">
+        <div class="container-xl">
+            <div class="row center_o1">
+                <div class="col-md-5">
+                    <div class="center_o1l">
+                        <h2 class="mb-0"> Cart</h2>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="center_o1r text-end">
+                        <h6 class="mb-0"><a href="#">Home</a> <span class="me-2 ms-2"><i class="fa fa-caret-right"></i></span> Shopping Cart</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart_page" class="cart pt-4 pb-4">
+        <div class="container-xl">
+            <div class="cart_2 row">
+                <div class="col-md-6">
+                    <h5>MY CART</h5>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-end text-uppercase"><a href="#">Continue Shopping</a></h5>
+                </div>
+            </div>
+            <div class="cart_3 row mt-3">
+                <div class="col-md-8">
+                    <div class="cart_3l">
+                        <h6>PRODUCT</h6>
+                    </div>
+                    <div class="cart_3l1 mt-3 row ms-0 me-0">
+                        <div class="col-md-3 ps-0 col-3">
+                            <div class="cart_3l1i">
+                                @if (!string.IsNullOrEmpty(Model.ArtworkImage))
+                                {
+                                    <a href="detail.html">
+                                        <img src="data:image/jpeg;base64,
+                                            @Convert.ToBase64String(System.IO.File.ReadAllBytes(Server.MapPath("~/Images/" + Model.ArtworkImage)))" class="w-100" alt="abc">
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-9">
+                            <div class="cart_3l1i1">
+                                <h6 class="fw-bold">
+                                    ArtworkTitle<br />
+                                    <span>@Model.ArtworkTitle</span>
+                                </h6>
+                                <h5 class="col_pink mt-3">@Model.Price</h5>
+                                <h6 class="font_12 mt-3 mb-3">@Model.Quantity</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cart_3r">
+                        <h6 class="head_1">SUBTOTAL</h6>
+                        <h5 class="text-center col_pink mt-3">@Model.Price</h5>
+                        <hr>
+                        <h6 class="col_pink mt-3">
+                            <a class="button" href="@Url.Action("Checkout", "Home")">PROCEED TO CHECKOUT</a>
+                        </h6>
+                        <br>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

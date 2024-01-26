@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Art_shop.Models.Auction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartingBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artwork.ArtworkTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.ArtistName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartingBid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentBid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artwork.ArtworkTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuctionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AuctionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuctionID })
+        </td>
+    </tr>
+}
+
+</table>

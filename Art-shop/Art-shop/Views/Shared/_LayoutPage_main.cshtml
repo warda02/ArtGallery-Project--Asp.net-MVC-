@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <title>Artsy</title>
+    <link href="~/AssetsSite/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/AssetsSite/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/AssetsSite/css/global.css" rel="stylesheet">
+    <link href="~/AssetsSite/css/index.css" rel="stylesheet">
+    <link href="~/AssetsSite/C2/StyleSheet1.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <div class="main clearfix position-relative">
+        <div class="main_1 clearfix position-absolute top-0 w-100">
+            <section id="header">
+                <nav class="navbar navbar-expand-md navbar-light" id="navbar_sticky">
+                    <div class="container-xl">
+                        <a class="navbar-brand fs-2 p-0 fw-bold text-white" href="@Url.Action("Index", "Home")">
+                            ARTSY
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mb-0 ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="@Url.Action("About", "Home")">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="@Url.Action("Artists", "Home")">Artists</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="@Url.Action("Artwork", "Home")" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Shop_Art
+                                    </a>
+                                    <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="@Url.Action("Artwork", "Home")">ArtWork</a></li>
+                                        <li><a class="dropdown-item border-0" href="@Url.Action("ArtworkDetail", "Home")">Artwork Detail</a></li>
+
+                                    </ul>
+                                </li>
+
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Discover More
+                                    </a>
+                                    <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="@Url.Action("Auctions", "Home")">Auctions</a></li>
+                                        <li><a class="dropdown-item border-0" href="@Url.Action("MemberArtwork", "Home")">Gallery</a>
+                                        <li><a class="dropdown-item border-0" href="@Url.Action("Shows", "Home")">Exhibition</a>
+                                    </ul>
+                                </li>
+
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMemberLogin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Member Login
+                                    </a>
+                                    <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdownMemberLogin">
+                                        <li><a class="dropdown-item border-0" href="@Url.Action("Login", "Members")">Login</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User
+                                    </a>
+                                    <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdownUser">
+                                        <li><a class="dropdown-item border-0" href="@Url.Action("Signup", "user_info")">Signup</a></li>
+                                        <li><a class="dropdown-item border-0" href="@Url.Action("Login", "user_info")">Login</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        </div>
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <!-- ======= Footer ======= -->
+
+    <section id="footer" class="pt-3 pb-3">
+        <div class="container-fluid">
+            <div class="row footer_1">
+                <div class="col-md-3">
+                    <div class="footer_1i">
+                        <hr class="line_1">
+                        <h5 class="mb-3">ABOUT</h5>
+                        <p>Phasellus et nisl tellus. Etiam facilisis eu nisi scelerisque faucibus. Proin semper suscipit magna, nec imperdiet lacus semper vitae. Sed hendrerit enim non justo posuere placerat eget purus mauris.</p>
+                        <p>Etiam facilisis eu nisi scelerisque faucibus. Proin semper suscipit magna, nec imperdiet lacus semper.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer_1i">
+                        <hr class="line_1">
+                        <h5 class="mb-3">RECENT WORKS</h5>
+                        <div class="footer_1i1 row">
+                            <div class="col-md-4 col-4 p-0">
+                                <div class="footer_1i1i">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-jazz mb-0">
+                                            <a href="#"><img src="~/Art_Images/Street Art/3003.jpeg" class="w-100" alt="abc"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-4 p-0">
+                                <div class="footer_1i1i">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-jazz mb-0">
+                                            <a href="#"><img src="~/Art_Images/Street Art/3009.jpeg" class="w-100" alt="abc"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-4 p-0">
+                                <div class="footer_1i1i">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-jazz mb-0">
+                                            <a href="#"><img src="~/Art_Images/Street Art/3007.jpeg" class="w-100" alt="abc"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer_1i1 row">
+                            <div class="col-md-4 col-4 p-0">
+                                <div class="footer_1i1i">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-jazz mb-0">
+                                            <a href="#"><img src="~/Art_Images/Street Art/3006.jpg" class="w-100" alt="abc"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-4 p-0">
+                                <div class="footer_1i1i">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-jazz mb-0">
+                                            <a href="#"><img src="~/Art_Images/Street Art/3003.jpeg" class="w-100" alt="abc"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-4 p-0">
+                                <div class="footer_1i1i">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-jazz mb-0">
+                                            <a href="#"><img src="~/Art_Images/Street Art/300.jpg" class="w-100" alt="abc"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer_1i">
+                        <hr class="line_1">
+                        <h5 class="mb-3">TAG CLOUD</h5>
+                        <ul class="mb-0">
+                            <li class="d-inline-block"><a class="d-block" href="#">Analyze</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Audio</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Blog</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Business</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Creative</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Design</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Experiment</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">News</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Expertize</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Express</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Share</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Sustain</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Video</a></li>
+                            <li class="d-inline-block"><a class="d-block" href="#">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer_1i">
+                        <hr class="line_1">
+                        <h5 class="mb-3">RECENT NEWS</h5>
+                        <p class="font_14 mb-2"><a href="#">INTEGER AT DIAM GRAVIDA FRINGILLA NIBH PRETI PURUS</a></p>
+                        <h6 class="col_light font_14"><i class="fa fa-clock-o col_pink me-1"></i> May 18 <a class="col_light" href="#"><i class="fa fa-comment-o col_pink me-1 ms-3"></i> 2</a></h6>
+                        <hr>
+                        <p class="font_14 mb-2"><a href="#">DONEC QUIS EX VEL TINCIDUNT</a></p>
+                        <h6 class="col_light font_14"><i class="fa fa-clock-o col_pink me-1"></i> July 19 <a class="col_light" href="#"><i class="fa fa-comment-o col_pink me-1 ms-3"></i> 2</a></h6>
+                        <hr>
+                        <p class="font_14 mb-2"><a href="#">PRAESENT IACULIS TORTOR VIVERRA</a></p>
+                        <h6 class="col_light font_14"><i class="fa fa-clock-o col_pink me-1"></i> June 17 <a class="col_light" href="#"><i class="fa fa-comment-o col_pink me-1 ms-3"></i> 2</a></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer_2 mt-4 text-center">
+                <div class="col-md-12">
+                    <ul>
+                        <li class="d-inline-block me-3 font_14"><a href="#">CONTACT</a></li>
+                        <li class="d-inline-block me-3 font_14"><a href="#">PRIVACY POLICY</a></li>
+                        <li class="d-inline-block me-3 font_14"><a href="#">TERMS OF USE</a></li>
+                        <li class="d-inline-block font_14"><a href="#">FAQ</a></li>
+                    </ul>
+                    <p class="mb-0">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_pink" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar_sticky = document.getElementById("navbar_sticky");
+        var sticky = navbar_sticky.offsetTop;
+        var navbar_height = document.querySelector('.navbar').offsetHeight;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky + navbar_height) {
+                navbar_sticky.classList.add("sticky")
+                document.body.style.paddingTop = navbar_height + 'px';
+            } else {
+                navbar_sticky.classList.remove("sticky");
+                document.body.style.paddingTop = '0'
+            }
+        }
+    </script>
+
+
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
+
+</body>
+
+</html>
