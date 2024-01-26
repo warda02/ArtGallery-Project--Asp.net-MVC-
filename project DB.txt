@@ -1,0 +1,245 @@
+USE [Gallery]
+GO
+/****** Object:  Table [dbo].[admin_info]    Script Date: 1/26/2024 6:09:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[admin_info](
+	[admin_id] [int] IDENTITY(1,1) NOT NULL,
+	[admin_name] [varchar](100) NOT NULL,
+	[admin_email] [varchar](300) NOT NULL,
+	[admin_password] [varchar](300) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[admin_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Artist]    Script Date: 1/26/2024 6:09:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Artist](
+	[ArtistID] [int] IDENTITY(1,1) NOT NULL,
+	[ArtistName] [varchar](255) NOT NULL,
+	[Bio] [nvarchar](max) NULL,
+	[Website] [varchar](255) NULL,
+	[Country] [varchar](50) NULL,
+	[ArtistImageTemp] [varchar](max) NULL,
+	[CategoryID] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ArtistID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Artwork]    Script Date: 1/26/2024 6:09:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Artwork](
+	[ArtworkID] [int] IDENTITY(1,1) NOT NULL,
+	[ArtworkTitle] [varchar](255) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[Price] [decimal](10, 2) NULL,
+	[CategoryID] [int] NULL,
+	[ArtistID] [int] NULL,
+	[ArtworkImage] [varchar](max) NULL,
+	[QuantitySold] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ArtworkID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Auctions]    Script Date: 1/26/2024 6:09:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Auctions](
+	[AuctionID] [int] IDENTITY(1,1) NOT NULL,
+	[ArtworkID] [int] NOT NULL,
+	[StartDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NOT NULL,
+	[StartingBid] [decimal](10, 2) NOT NULL,
+	[CurrentBid] [decimal](10, 2) NULL,
+	[ArtistID] [int] NULL,
+	[CategoryID] [int] NULL,
+	[UserId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AuctionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Category]    Script Date: 1/26/2024 6:09:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Category](
+	[CategoryID] [int] IDENTITY(1,1) NOT NULL,
+	[CategoryName] [varchar](255) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CategoryID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Member]    Script Date: 1/26/2024 6:09:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Member](
+	[MemberID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Email] [nvarchar](256) NOT NULL,
+	[Contact] [nvarchar](100) NULL,
+	[Address] [nvarchar](100) NULL,
+	[Password] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MemberID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MemberArtwork]    Script Date: 1/26/2024 6:09:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MemberArtwork](
+	[ArtworkID] [int] IDENTITY(1,1) NOT NULL,
+	[MemberID] [int] NULL,
+	[ArtworkTitle] [nvarchar](255) NOT NULL,
+	[ArtworkImage] [nvarchar](255) NOT NULL,
+	[Category] [nvarchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ArtworkID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[orders_info]    Script Date: 1/26/2024 6:09:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[orders_info](
+	[ArtworkID] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[Name] [varchar](255) NOT NULL,
+	[email] [varchar](255) NOT NULL,
+	[address] [varchar](255) NOT NULL,
+	[city] [varchar](255) NOT NULL,
+	[state] [varchar](255) NOT NULL,
+	[cardname] [varchar](255) NOT NULL,
+	[cardnumber] [varchar](20) NOT NULL,
+	[expdate] [varchar](255) NOT NULL,
+	[total_amt] [int] NULL,
+	[cvv] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ArtworkID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Shows]    Script Date: 1/26/2024 6:09:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Shows](
+	[ShowID] [int] NOT NULL,
+	[Title] [nvarchar](255) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[StartDate] [datetime] NULL,
+	[EndDate] [datetime] NULL,
+	[Venue] [nvarchar](255) NULL,
+	[Organizer] [nvarchar](255) NULL,
+	[AdminNotes] [nvarchar](max) NULL,
+	[Show_Image] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ShowID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[user_info]    Script Date: 1/26/2024 6:09:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[user_info](
+	[user_id] [int] IDENTITY(1,1) NOT NULL,
+	[first_name] [varchar](100) NOT NULL,
+	[last_name] [varchar](100) NOT NULL,
+	[email] [varchar](300) NOT NULL,
+	[password] [varchar](300) NOT NULL,
+	[mobile] [varchar](20) NOT NULL,
+	[address1] [varchar](300) NOT NULL,
+	[address2] [varchar](300) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[user_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Artwork] ADD  DEFAULT ((0)) FOR [QuantitySold]
+GO
+ALTER TABLE [dbo].[Artwork] ADD  DEFAULT ((0)) FOR [Quantity]
+GO
+ALTER TABLE [dbo].[Artist]  WITH CHECK ADD FOREIGN KEY([CategoryID])
+REFERENCES [dbo].[Category] ([CategoryID])
+GO
+ALTER TABLE [dbo].[Artist]  WITH CHECK ADD FOREIGN KEY([CategoryID])
+REFERENCES [dbo].[Category] ([CategoryID])
+GO
+ALTER TABLE [dbo].[Artwork]  WITH CHECK ADD FOREIGN KEY([CategoryID])
+REFERENCES [dbo].[Category] ([CategoryID])
+GO
+ALTER TABLE [dbo].[Artwork]  WITH CHECK ADD FOREIGN KEY([ArtistID])
+REFERENCES [dbo].[Artist] ([ArtistID])
+GO
+ALTER TABLE [dbo].[Auctions]  WITH CHECK ADD FOREIGN KEY([ArtistID])
+REFERENCES [dbo].[Artist] ([ArtistID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Auctions]  WITH CHECK ADD FOREIGN KEY([ArtworkID])
+REFERENCES [dbo].[Artwork] ([ArtworkID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Auctions]  WITH CHECK ADD FOREIGN KEY([CategoryID])
+REFERENCES [dbo].[Category] ([CategoryID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Auctions]  WITH CHECK ADD  CONSTRAINT [FK_Auctions_User] FOREIGN KEY([UserId])
+REFERENCES [dbo].[user_info] ([user_id])
+GO
+ALTER TABLE [dbo].[Auctions] CHECK CONSTRAINT [FK_Auctions_User]
+GO
+ALTER TABLE [dbo].[MemberArtwork]  WITH CHECK ADD  CONSTRAINT [FK_Artwork_Member] FOREIGN KEY([MemberID])
+REFERENCES [dbo].[Member] ([MemberID])
+GO
+ALTER TABLE [dbo].[MemberArtwork] CHECK CONSTRAINT [FK_Artwork_Member]
+GO
+ALTER TABLE [dbo].[orders_info]  WITH CHECK ADD FOREIGN KEY([user_id])
+REFERENCES [dbo].[user_info] ([user_id])
+GO
+ALTER TABLE [dbo].[Shows]  WITH CHECK ADD  CONSTRAINT [CHK_FutureShowDates] CHECK  (([StartDate] IS NULL OR [StartDate]>=getdate()))
+GO
+ALTER TABLE [dbo].[Shows] CHECK CONSTRAINT [CHK_FutureShowDates]
+GO
+ALTER TABLE [dbo].[Shows]  WITH CHECK ADD  CONSTRAINT [CHK_ShowDates] CHECK  (([StartDate] IS NULL AND [EndDate] IS NULL OR [StartDate]<=[EndDate]))
+GO
+ALTER TABLE [dbo].[Shows] CHECK CONSTRAINT [CHK_ShowDates]
+GO
